@@ -2,13 +2,19 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 
 import svg1 from "../Data/SVG/Member8.svg";
 import svg2 from "../Data/SVG/Member7.svg";
 import svg3 from "../Data/SVG/Member4.svg";
 import svg4 from "../Data/SVG/Group100.svg";
-import Link from "next/link";
+
+import img2 from "../Data/Img/image (2).png";
+import img3 from "../Data/Img/image (3).png";
+import img4 from "../Data/Img/image (4).png";
+import img5 from "../Data/Img/image 28.png";
+
 
 const MoreDetails: React.FC = () => {
   const [active, setActive] = useState<string | null>("Website");
@@ -59,27 +65,27 @@ const MoreDetails: React.FC = () => {
           </Link>
         </div>
 
-        <div className="w-full mt-[-100px] z-0">
+        <div className="w-full mt-[-170px] z-0">
           <Image alt="Img" src={svg4} className="w-full h-full" />
         </div>
       </div>
 
-      <div className="w-[95%] mt-[50px] md:mt-[150px]">
+      <div className="z-10 w-[95%] mt-[-200px]">
         <p className="text-[#0C89FF] text-[15px]">UI/UX PORTFOLIO</p>
 
         <div className="w-full flex flex-col md:flex-row justify-between">
-          <p className="text-2xl md:text-3xl font-semibold">
-            Check Our Available Services
+          <p className="text-2xl text-[#001246] md:text-3xl font-semibold">
+          Check Our Previous Work
           </p>
 
           <Link
-            href="/"
-            className="transition-colors text-center mt-3 md:mt-0 uppercase bg-[#FF693B] border border-[#FF693B] p-1 px-8 rounded hover:text-white hover:border-white hover:bg-transparent"
+            href="/portfolio"
+            className="transition-colors uppercase text-white bg-[#FF693B] border border-[#FF693B] p-1 md:p-2 px-12 md:px-14 mr-0 md:mr-5 mb-3 md:mb-0 rounded hover:text-[#0A2C8C] hover:border-[#0A2C8C] hover:bg-transparent"
           >
-            All Services
+            All Portfolio
           </Link>
         </div>
-        <div className="w-full h-[.5px] mt-4 bg-white opacity-35" />
+        <div className="w-full h-[.5px] mt-4 bg-[#0A2C8C1A]" />
 
         <div className="mt-8 w-full">
           <div className="flex">
@@ -117,10 +123,10 @@ const MoreDetails: React.FC = () => {
                       ref={scrollRef}
                       className="w-full h-auto flex overflow-hidden no-scrollbar outline-none overflow-x-scroll scroll-smooth space-x-5"
                     >
-                      <div className="w-[410px]">
-                        
+                      <div className="w-[410px] h-auto">
+                      <Image alt="img" src={img2} className="h-[200px] w-[250px]"/>
                       </div>
-
+ 
                       <div className="w-[410px] h-auto">
                         
                       </div>

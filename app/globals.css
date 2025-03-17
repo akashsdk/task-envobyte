@@ -14,3 +14,13 @@
     #0a2c8c 100%
   );
 }
+
+@media (max-width: 1000px) {
+  .clipped-index {
+    clip-path: none;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

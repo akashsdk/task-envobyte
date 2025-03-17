@@ -30,7 +30,7 @@ const Index: React.FC = () => {
   const scrollLeft = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: -300, // Adjust this value to control scroll distance
+        left: -300,
         behavior: "smooth",
       });
     }
@@ -39,7 +39,7 @@ const Index: React.FC = () => {
   const scrollRight = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: 300, // Adjust this value to control scroll distance
+        left: 300, 
         behavior: "smooth",
       });
     }

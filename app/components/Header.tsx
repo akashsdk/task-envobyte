@@ -3,14 +3,17 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { usePathname } from "next/navigation"; // Import usePathname
+import { usePathname } from "next/navigation";
+
+import { MenuOutlined, CloseCircleOutlined } from "@ant-design/icons";
+import { Drawer } from "antd";
 
 import LogoSVG from "@/app/Data/SVG/weblogo.svg";
 
 const Header: React.FC = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const pathname = usePathname(); // Get the current path
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +34,19 @@ const Header: React.FC = () => {
     };
   }, [lastScrollY]);
 
+  const [open, setOpen] = useState(false);
+
+  const showDrawer = () => {
+
+    setTimeout(() => {
+      setOpen(true);
+    }, 500);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div>
       {/* Top Bar */}
@@ -41,14 +57,14 @@ const Header: React.FC = () => {
             ? { type: "spring", stiffness: 100, damping: 30 }
             : { type: "spring", stiffness: 30 }
         }
-        className="bg-blue-900 shadow shadow-blue-800 z-50 w-full fixed top-0"
+        className="bg-[#0A2C8C] shadow shadow-blue-900 z-50 w-full fixed top-0"
       >
         <div className="container mx-auto flex justify-between items-center text-white px-3 h-[60px] md:h-[80px]">
           <Link href="/">
             <Image alt="Logo" src={LogoSVG} />
           </Link>
 
-          <div className="gap-3 flex">
+          <div className="md:gap-3 hidden md:flex">
             <Link
               href="/"
               className={`${
@@ -107,13 +123,50 @@ const Header: React.FC = () => {
           <Link
             href="/pages/see-pricing"
             className={`${
-              pathname === "/pages/see-pricing" ? "text-white border bg-transparent" : ""
-            } transition-colors bg-[#FF693B] p-2 px-6 rounded`}
+              pathname === "/pages/see-pricing"
+                ? "text-white border bg-transparent"
+                : ""
+            } transition-colors bg-[#FF693B] p-2 px-6 rounded hidden md:block`}
           >
             See Pricing
           </Link>
+
+          <button className="md:hidden cursor-pointer" onClick={showDrawer}>
+            <MenuOutlined className="text-2xl" />
+          </button>
+
+          
         </div>
       </motion.div>
+
+      {/* Mobile Screen */}
+      <Drawer
+          title=""
+          placement="left"
+          closable={false}
+          onClose={onClose}
+          open={open}
+          width={300}
+        >
+          <div className="w-full">
+            <div className="flex justify-around items-center pb-2 border-b">
+              <Link href="/" className="">
+                <p className="text-3xl font-semibold font-serif">Web Name</p>
+              </Link>
+
+              <button
+                onClick={onClose}
+                className="text-xl opacity-80 hover:opacity-100"
+              >
+                <CloseCircleOutlined />
+              </button>
+            </div>
+
+            <div>
+              Next content
+            </div>
+          </div>
+        </Drawer>
     </div>
   );
 };

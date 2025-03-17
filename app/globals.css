@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+.body {
+  background-color: #0a2c8c;
+}
+
+.clipped-index {
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 75% 100%, 25% 100%, 0 100%);
+  background: linear-gradient(
+    to bottom,
+    #0a2c8c 0%,
+    #1042c9 30%,
+    #0a2c8c 60%,
+    #0a2c8c 100%
+  );
+}

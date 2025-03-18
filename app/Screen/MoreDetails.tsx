@@ -87,7 +87,7 @@ const MoreDetails: React.FC = () => {
         </div>
         <div className="w-full h-[.5px] mt-4 bg-[#0A2C8C1A]" />
 
-        <div className="mt-8 w-full">
+        <div className="mt-8 md:mt-12 w-full">
           <div className="flex">
             {services.map((service) => (
               <button

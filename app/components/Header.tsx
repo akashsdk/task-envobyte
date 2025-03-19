@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-import { MenuOutlined, CloseCircleOutlined } from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
 import { Drawer } from "antd";
 
 import LogoSVG from "@/app/Data/SVG/weblogo.svg";
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
     <div>
       {/* Top Bar */}
       <motion.div
-        animate={{ y: show ? 0 : -60 }}
+        animate={{ y: show ? 0 : -81 }}
         transition={
           show
             ? { type: "spring", stiffness: 100, damping: 30 }
@@ -147,24 +147,12 @@ const Header: React.FC = () => {
           onClose={onClose}
           open={open}
           width={300}
+          drawerStyle={{ backgroundColor: "#0A2C8C" }} 
         >
-          <div className="w-full">
-            <div className="flex justify-around items-center pb-2 border-b">
-              <Link href="/" className="">
-                <p className="text-3xl font-semibold font-serif">Web Name</p>
-              </Link>
-
-              <button
-                onClick={onClose}
-                className="text-xl opacity-80 hover:opacity-100"
-              >
-                <CloseCircleOutlined />
-              </button>
-            </div>
-
-            <div>
-              Next content
-            </div>
+          <div className="w-full ">
+          <Link href="/">
+            <Image alt="Logo" src={LogoSVG} />
+          </Link>
           </div>
         </Drawer>
     </div>

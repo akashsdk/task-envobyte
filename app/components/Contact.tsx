@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
         <div className="w-[55%] h-[1px] mt-2 mb-2 md:mt-4 md:mb-4 bg-[#E5E7EB1A]"/>
 
         <Link href="/" className="flex">
-          <div className="p-2 border">
+          <div className="p-2 border border-[#25D366]">
             <Image src={Icon3} alt="Icon" className="h-[30px] w-[30px]"/>
           </div>
           <div className="ml-3">
@@ -180,7 +180,7 @@ const Contact: React.FC = () => {
         <div className="w-[55%] h-[1px] mt-2 mb-2 md:mt-4 md:mb-4 bg-[#E5E7EB1A]"/>
 
         <Link href="/" className="flex">
-          <div className="p-2 border">
+          <div className="p-2 border border-[#2867B2]">
             <Image src={Icon4} alt="Icon" className="h-[30px] w-[30px]"/>
           </div>
           <div className="ml-3">
